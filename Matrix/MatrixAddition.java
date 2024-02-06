@@ -19,14 +19,27 @@ public class MatrixAddition {
                 new ArrayList<>(Arrays.asList(6, 5, 4)),
                 new ArrayList<>(Arrays.asList(3, 2, 1))
         ));
-        addMatrices(matrix1, matrix2);
+        ArrayList<ArrayList<Integer>> result = addMatrices(matrix1, matrix2);
+
+        if(result!=null){
+            printMatrix(result);
+        }
     }
 
-    private static void addMatrices(ArrayList<ArrayList<Integer>> matrix1, ArrayList<ArrayList<Integer>> matrix2){
+    private static ArrayList<ArrayList<Integer>> addMatrices(ArrayList<ArrayList<Integer>> matrix1, ArrayList<ArrayList<Integer>> matrix2){
+        
+        // input validation
+        if(matrix1.size()!=matrix2.size()){
+            return null;
+        }
+        if(matrix1.size()==0){
+            return new ArrayList<>();
+        }
         int rows = matrix1.size();
         int columns = matrix1.get(0).size();
         ArrayList<ArrayList<Integer>> result = new ArrayList<>();
 
+        // add values and store in resultant matrix
         for(int i=0; i<rows; i++){
             result.add(new ArrayList<>());
             for(int j=0; j<columns; j++){
@@ -34,9 +47,16 @@ public class MatrixAddition {
                 result.get(i).add(sum);
             }
         }
+        return result;
+    }
+
+    private static void printMatrix(ArrayList<ArrayList<Integer>> matrix){
+        int rows = matrix.size();
+        int columns = matrix.get(0).size();
+
         for(int i=0; i<rows; i++){
             for(int j=0; j<columns; j++){
-                System.out.print(result.get(i).get(j));
+                System.out.print(matrix.get(i).get(j));
                 System.out.print(" ");
             }
             System.out.println();
