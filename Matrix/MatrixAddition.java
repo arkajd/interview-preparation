@@ -9,27 +9,22 @@ import java.util.Arrays;
 public class MatrixAddition {
 
     public static void main(String[] args) {
-
         ArrayList<ArrayList<Integer>> matrix1 = new ArrayList<>(Arrays.asList(
                 new ArrayList<>(Arrays.asList(1, 2, 3)),
                 new ArrayList<>(Arrays.asList(4, 5, 6)),
                 new ArrayList<>(Arrays.asList(7, 8, 9))
         ));
-
         ArrayList<ArrayList<Integer>> matrix2 = new ArrayList<>(Arrays.asList(
                 new ArrayList<>(Arrays.asList(9, 8, 7)),
                 new ArrayList<>(Arrays.asList(6, 5, 4)),
                 new ArrayList<>(Arrays.asList(3, 2, 1))
         ));
-
         addMatrices(matrix1, matrix2);
-        
     }
 
     private static void addMatrices(ArrayList<ArrayList<Integer>> matrix1, ArrayList<ArrayList<Integer>> matrix2){
         int rows = matrix1.size();
         int columns = matrix1.get(0).size();
-
         ArrayList<ArrayList<Integer>> result = new ArrayList<>();
 
         for(int i=0; i<rows; i++){
@@ -39,7 +34,6 @@ public class MatrixAddition {
                 result.get(i).add(sum);
             }
         }
-
         for(int i=0; i<rows; i++){
             for(int j=0; j<columns; j++){
                 System.out.print(result.get(i).get(j));
@@ -48,7 +42,5 @@ public class MatrixAddition {
             System.out.println();
         }
     }
-
-
     
 }
