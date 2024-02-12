@@ -15,7 +15,6 @@ public class AddBinaryStrings {
 
         // make both strings of equal size by appending 0s to string with shorter length
         int lengthDiff = Math.max(a.length(), b.length()) - Math.min(a.length(), b.length());
-
         StringBuilder zeros = new StringBuilder();
 
         for(int i=0; i<lengthDiff; i++){
