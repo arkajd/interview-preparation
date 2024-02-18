@@ -21,6 +21,7 @@ public class GoodSubarrayCount {
         int length = A.size();
         int goodCount = 0;
 
+        // consider all possible sub arrays
         for(int i=0; i<length; i++){
             int sum = 0;
             for(int j=i; j<length; j++){
